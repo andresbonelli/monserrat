@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Monserrat</title>
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    
+  </head>
+  <body class="body">
+    <!-- Top Start -->
+    <div class="top-content">
+      <div class="row">
+        <div class="col-md-9 col-12 d-flex flex-row justify-content-between">
+          <div class="d-flex flex-row social-icons">
+            <a
+              class="list-group-item p-2"
+              href="mailto:ciclomonserrat@gmail.com"
+              target="_blank"
+              ><img style="max-height: 20px" src="../images/logo/email.svg"
+            /></a>
+            <a
+              class="list-group-item p-2"
+              href="https://instagram.com/monserratciclo"
+              target="_blank"
+              ><img style="max-height: 20px" src="../images/logo/instagram.svg"
+            /></a>
+            <a
+              class="list-group-item p-2"
+              href="https://www.facebook.com/monserratciclo"
+              target="_blank"
+              ><img style="max-height: 20px" src="../images/logo/facebook.svg"
+            /></a>
+            <a
+              class="list-group-item p-2"
+              href="https://www.youtube.com/@ciclomonserrat9600 "
+              target="_blank"
+              ><img style="max-height: 20px" src="../images/logo/youtube.svg"
+            /></a>
+          </div>
+          <a href="./pages/login.html" class="list-group-item p-2">
+            <div class="row account-links">
+              <img class="col-6 account-icon" src="../images/logo/account.svg" />
+              <div class="col-6 cuenta">Cuenta</div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 col-12">
+          <div class="input-group search-bar rounded m-2">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Buscar por autor o título..."
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar sticky-top navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img class="logo" src="../images/logo/logo.png"
+        /></a>
+        <!-- Menu hamburguesa -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse navbar-text"
+          id="navbarSupportedContent"
+        >
+          
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- <header class="container-fluid">
+  </header>  -->
+
+    <!-- Main Start -->
+    <main>
+      
+      <div class="container">
+        <div class="content">
+            <div class="row">
+              <a href="../index.html" class="volver-btn">
+                <button class="submit" title="Volver">
+                    Volver <i class="fas fa-arrow-left"></i>
+                </button>
+            </a>
+                <div class="col-md-6 mb-4 mt-5">
+                    <div class="book_top d-flex flex-row align-items-start gap-5">
+                      
+                        <div class="book_image">
+                            <img src="../images/libros/portada-libro.old (2).jpg" class="img-fluid" alt="Portada del libro"/>
+                        </div>
+                        <div class="book_rate float-end">
+                            <form action="" class="sky-form">
+                                <fieldset>
+                                    <section class="puntuacion mb-2">
+                                      <h1>Once upon a time</h1>
+                                        <div class="rating_desc mt-4"><p>Tu puntuación:</p></div>
+                                        <div class="star-rating">
+                                          <input id="star-5" type="radio" name="rating" value="5" />
+                                          <label for="star-5" title="5 stars">★</label>
+                                          <input id="star-4" type="radio" name="rating" value="4" />
+                                          <label for="star-4" title="4 stars">★</label>
+                                          <input id="star-3" type="radio" name="rating" value="3" />
+                                          <label for="star-3" title="3 stars">★</label>
+                                          <input id="star-2" type="radio" name="rating" value="2" />
+                                          <label for="star-2" title="2 stars">★</label>
+                                          <input id="star-1" type="radio" name="rating" value="1" />
+                                          <label for="star-1" title="1 star">★</label>
+                                      </div>
+                                      
+                                    </section>
+                                    <section>
+                                        <div class="desc1">
+                                            <p class="book_option"><strong>País: </strong><a href="#">Argentina</a></p>
+                                            <p class="book_option"><strong>Año: </strong>2020</p>
+                                            <p class="book_option"><strong>Categoría: </strong><a href="#">Fantasía</a></p>
+                                            <p class="book_option"><strong>Fecha de publicación: </strong>Diciembre de 2023</p>
+                                            <p class="book_option"><strong>Autor: </strong><a href="#">Klien Marry</a></p>
+                                            <p class="book_option"><strong>Edad recomendada: </strong>+13</p>
+                                        </div>
+                                    </section>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="formulario">
+        <div class="content">
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-5">
+                    <form>
+                        <div class="to">
+                            <input type="text" class="text" value="Nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nombre';}">
+                            <input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" style="margin-left:3%">
+                        </div>
+                        <div class="text">
+                            <textarea value="Mensaje:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mensaje';}">Mensaje</textarea>
+                        </div>
+                        <div class="form-submit1">
+                            <input name="submit" type="submit" id="submit" value="Envía tu mensaje"><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <footer id="footer">
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="mb-3" id="logo-bottom">
+              <a href="#"
+                ><img src="../images/logo/logo.png" alt="logo" class="img-fluid"
+              /></a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="footer-menu">
+              <h5>Puntos de venta</h5>
+              <ul class="menu-list">
+                <div class="row">
+                  <div class="col-md-4">
+                    <li class="menu-item">
+                      <a
+                        href="https://www.instagram.com/mandragora.librosycultura/"
+                        >Mandrágora Libros y Cultura</a
+                      >
+                      <p>Vera 1096 - CABA</p>
+                    </li>
+                    <li class="menu-item">
+                      <a href="https://www.instagram.com/lalibrearteylibros/"
+                        >La Libre Arte y libros</a
+                      >
+                      <p>Chacabuco 917 – CABA</p>
+                    </li>
+                  </div>
+                  <div class="col-md-4">
+                    <li class="menu-item">
+                      <a href="https://www.instagram.com/libreriagiordanolanus/"
+                        >Librería Giordano</a
+                      >
+                      <p>O'Higgins 2016 – LANUS</p>
+                    </li>
+                    <li class="menu-item">
+                      <a href="https://www.instagram.com/libreriatrennocturno/"
+                        >Librería Tren nocturno</a
+                      >
+                      <p>29 de septiembre 3928 – BANFIELD</p>
+                    </li>
+                  </div>
+                  <div class="col-md-4">
+                    <li class="menu-item">
+                      <a href="https://www.instagram.com/malatesta_libros/"
+                        >Malatesta Libros</a
+                      >
+                      <p>Gándara 2994 – CABA</p>
+                    </li>
+                    <li class="menu-item">
+                      <a href="https://www.instagram.com/ritualitos.libros/"
+                        >Ritualitos Libros</a
+                      >
+                      <p>Pieres 103 – CABA</p>
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="footer-menu">
+              <h5>Mi Cuenta</h5>
+              <ul class="menu-list">
+                <li class="menu-item">
+                  <a class="list-group-item" href="#">Ingresar</a>
+                </li>
+                <li class="menu-item">
+                  <a class="list-group-item" href="#">Ver Carrito</a>
+                </li>
+                <li class="menu-item">
+                  <a class="list-group-item" href="#">Favoritos</a>
+                </li>
+                <li class="menu-item">
+                  <a class="list-group-item" hxxref="#">Seguir envío</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- / row -->
+      </div>
+
+      <!-- bottom-content-->
+
+      <div class="footer-links" id="footer-bottom">
+        <div class="container mt-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright">
+                <div class="row">
+                  <div class="col-8 align-bottom">
+                    <p>© Codo-a-Codo 2024</p>
+                  </div>
+                  <div
+                    class="col-4 d-flex flex-row justify-content-end"
+                    id="footer-icons"
+                  >
+                    <a
+                      class="list-group-item p-2"
+                      href="mailto:ciclomonserrat@gmail.com"
+                      target="_blank"
+                      ><img
+                        style="max-height: 20px"
+                        src="../images/logo/email.svg"
+                    /></a>
+                    <a
+                      class="list-group-item p-2"
+                      href="https://instagram.com/monserratciclo"
+                      target="_blank"
+                      ><img
+                        style="max-height: 20px"
+                        src="../images/logo/instagram.svg"
+                    /></a>
+                    <a
+                      class="list-group-item p-2"
+                      href="https://www.facebook.com/monserratciclo"
+                      target="_blank"
+                      ><img
+                        style="max-height: 20px"
+                        src="../images/logo/facebook.svg"
+                    /></a>
+                    <a
+                      class="list-group-item p-2"
+                      href="https://www.youtube.com/@ciclomonserrat9600 "
+                      target="_blank"
+                      ><img
+                        style="max-height: 20px"
+                        src="../images/logo/youtube.svg"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--bottom-content -->
+    </footer>
+    <!-- Footer End -->
+  </body>
+</html>
