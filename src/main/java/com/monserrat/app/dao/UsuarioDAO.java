@@ -78,13 +78,42 @@ public class UsuarioDAO {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) { 
-            String userEmail = rs.getString("email");
-            String userPass = rs.getString("pass"); 
+                String userEmail = rs.getString("email");
+                String userPass = rs.getString("pass"); 
+                
+                return new Usuario(userEmail, userPass);
+            }
             
-            return new Usuario(userEmail, userPass);
+        } catch (Exception e) {
+            System.err.println("[ERROR] - Connection error: " + e.getMessage());
         }
+        return null;
+    }
 
+    public Integer findUser(String email, String pass) {
+        try {
+            MySQLConnector mysql = new MySQLConnector();
+
+            st = mysql.connectDb();
             
+            ps = mysql.connectPreparedDb("SELECT * FROM usuarios WHERE email=?");
+            ps.setString(1, email);
+
+            ResultSet rs = ps.executeQuery();
+
+            // user exists in database
+            if (rs.next()) { 
+            String userPass = rs.getString("pass");
+                // check for correct password
+                if (pass.equals(userPass)) {
+                    return 1;
+                }
+                return 0;
+            // user does not exist
+            } else {
+                return -1;
+            }
+
         } catch (Exception e) {
             System.err.println("[ERROR] - Connection error: " + e.getMessage());
         }
