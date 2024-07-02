@@ -56,7 +56,7 @@ public class LibroDAO {
             MySQLConnector mysql = new MySQLConnector();
 
             st = mysql.connectDb();
-            String sql = "INSERT INTO libro (id,titulo,genero) VALUES (?,?,?)";
+            String sql = "INSERT INTO libros (id,titulo,genero) VALUES (?,?,?)";
             
             ps = mysql.connectPreparedDb(sql);
  
