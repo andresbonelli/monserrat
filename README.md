@@ -5,6 +5,7 @@
 **Dir Path:** `src/main/resources/static`
 
 ### Database Setup
+> **ATENCION:** Respetar los campos tal cual están para que funcione correctamente el Back End.
 
 ```sql
 CREATE SCHEMA monserrat;
@@ -29,4 +30,11 @@ INSERT INTO monserrat.libros (ID, titulo, genero) VALUES
 (7, 'Ojas', 'plaqueta'),
 (8, 'Polvareda', 'plaqueta');
 ```
-
+#### User Database
+```sql
+CREATE TABLE monserrat.usuarios (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    pass VARCHAR(45) NOT NULL
+);
+```
