@@ -18,30 +18,22 @@ public class LibroDAO {
     
     public LibroDAO() {
         MySQLConnector mysql = new MySQLConnector();
-
-        st = mysql.connectDb();
-        
-    }
+        st = mysql.connectDb();        
+        }
 
     public List<Libro> listar() {
         try {
             ResultSet rs=st.executeQuery("SELECT * FROM libros");
             List<Libro> listaLibros = new ArrayList<Libro>();
-            while (rs.next()) {
-
-                
+            while (rs.next()) {            
                 Integer id = rs.getInt("id");
                 String titulo = rs.getString("titulo");
                 String genero = rs.getString("genero");
-                
-               
+          
+                Libro libro = new Libro(id, titulo, genero);
+                listaLibros.add(libro);            
+                }
 
-               
-
-            Libro libro = new Libro(id, titulo, genero);
-            listaLibros.add(libro);
-                
-            }
             System.out.println("[SUCCESS] - Listado de Libros fetched correctly");
             return listaLibros;
             
@@ -54,13 +46,9 @@ public class LibroDAO {
     public Boolean add(Libro libro) {
         try {
             MySQLConnector mysql = new MySQLConnector();
-
-            st = mysql.connectDb();
-            String sql = "INSERT INTO libros (id,titulo,genero) VALUES (?,?,?)";
-            
+            String sql = "INSERT INTO libros (id,titulo,genero) VALUES (?,?,?)";            
             ps = mysql.connectPreparedDb(sql);
- 
-            
+   
             // Set parameters for the prepared statement
             ps.setInt(1,libro.getId());
             
@@ -74,17 +62,14 @@ public class LibroDAO {
                 ps.setString(3, libro.getGenero());
             } else {
                 ps.setNull(3, 0);
-            }
-            
-            ps.executeUpdate();
-        
+            }      
+            ps.executeUpdate();   
             return true; 
         } 
         catch(Exception e) {
             System.err.println("[ERROR] - Connection error: " + e.getMessage());
         }
         return false;
-
     }
 
     public Boolean del(Libro libro) {
@@ -99,8 +84,6 @@ public class LibroDAO {
             System.out.println("[ERROR] - failed to delete libro "+libro.getTitulo());
             e.printStackTrace();
         }
-
         return false;
     }
-
 }

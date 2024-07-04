@@ -31,14 +31,14 @@ public class UsuarioController {
         // Check if the user already exists by email
         Usuario existingUser = userDao.findUserByEmail(user.getEmail());
         if (existingUser!= null) {
-        // If the user exists, return an error response
+        // If the user exists, return an error response and status 201
         return ResponseEntity.status(HttpStatus.CONFLICT).body("{\"message\":\"Ese email ya se encuentra registrado\"}");
         }
 
         Usuario newUser=new Usuario(user.getEmail(), user.getPass());
         userDao.add(newUser);  
         
-        return ResponseEntity.ok("{\"message\":\"Usuario registrado correctamente\"}");
+        return ResponseEntity.status(HttpStatus.CREATED).body("{\"message\":\"Usuario registrado correctamente\"}");
     }
 
     @CrossOrigin(origins = "*")
@@ -51,12 +51,13 @@ public class UsuarioController {
             // Email and password are correct
             case 1:
                 return ResponseEntity.ok("{\"message\":\"Usuario logueado correctamente\"}");
-            // Password incorrect
+            // Password incorrect return status 409
             case 0:
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("{\"message\":\"Contraseña incorrecta!\"}");
-            // User does not exist in database
+            // User does not exist in db, return status 409
             case -1:
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("{\"message\":\"El usuario con ese email no existe!\"}");
+            // Unexpected error, return status 500
             default:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("{\"message\":\"An unexpected error occurred.\"}");
         }

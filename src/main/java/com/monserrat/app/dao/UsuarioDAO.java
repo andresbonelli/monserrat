@@ -44,7 +44,6 @@ public class UsuarioDAO {
         try {
             MySQLConnector mysql = new MySQLConnector();
 
-            st = mysql.connectDb();
             String sql = "INSERT INTO usuarios (email,pass) VALUES (?,?)";
             
             ps = mysql.connectPreparedDb(sql);
@@ -68,10 +67,7 @@ public class UsuarioDAO {
 
     public Usuario findUserByEmail(String email) {
         try {
-            MySQLConnector mysql = new MySQLConnector();
-
-            st = mysql.connectDb();
-            
+            MySQLConnector mysql = new MySQLConnector();            
             ps = mysql.connectPreparedDb("SELECT * FROM usuarios WHERE email=?");
             ps.setString(1, email);
 

@@ -7,7 +7,7 @@ public class Usuario {
 
     public Usuario() {}
 
-     public Usuario(Integer id, String name, String pass) {
+    public Usuario(Integer id, String name, String pass) {
         this.id = id;
         this.email = name;
         this.pass = pass;
