@@ -18,7 +18,7 @@ public class UsuarioDAO {
 
         st = mysql.connectDb();
     }
-
+    // GET view traer TODOS los usuarios
     public List<Usuario> listar() {
         try {
             ResultSet rs=st.executeQuery("SELECT * FROM usuarios");
@@ -39,7 +39,7 @@ public class UsuarioDAO {
         }
         return null;
     }
-
+    // POST view crear UN usuario
     public Boolean add(Usuario user) {
         try {
             MySQLConnector mysql = new MySQLConnector();
@@ -64,7 +64,7 @@ public class UsuarioDAO {
         return false;
 
     }
-
+    // GET by email buscar UN usuario por email
     public Usuario findUserByEmail(String email) {
         try {
             MySQLConnector mysql = new MySQLConnector();            
@@ -85,7 +85,7 @@ public class UsuarioDAO {
         }
         return null;
     }
-
+    // Buscar un usuario por email y contraseña
     public Integer findUser(String email, String pass) {
         try {
             MySQLConnector mysql = new MySQLConnector();
